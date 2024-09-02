@@ -2,8 +2,21 @@
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  const sidebarItems = [
+export async function Layout({ children }: { children: React.ReactNode }) {
+  const sidebarItems = await fetchSidebarItems(); // Fetch sidebar items on the server
+
+  return (
+    <>
+      <Sidebar menuItems={sidebarItems} />
+      <main className="flex-auto">{children}</main>
+      <Footer />
+    </>
+  );
+}
+
+// Function to fetch sidebar items
+async function fetchSidebarItems() {
+  return [
     {
       title: "Invest",
       subItems: {
@@ -139,8 +152,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     },
     {
       title: "Pricing",
-      subItems: {
-      },
+      subItems: {},
       url: "https://www.indmoney.com/pricing?type=indian-stocks",
     },
     {
@@ -151,11 +163,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
       },
     },
   ];
-  return (
-    <>
-      <Sidebar menuItems={sidebarItems} />
-      <main className="flex-auto">{children}</main>
-      <Footer />
-    </>
-  );
 }
