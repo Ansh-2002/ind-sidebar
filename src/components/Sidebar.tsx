@@ -56,6 +56,7 @@
 // export default Sidebar;import React, { useState } from 'react';
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
+import DownloadAppCard from "@/components/DownloadAppCard";
 
 interface SidebarProps {
   menuItems: {
@@ -149,6 +150,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
                 )}
               </li>
             ))}
+            <DownloadAppCard />
           </ul>
         </nav>
       </div>
