@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const DownloadAppCard: React.FC = () => {
@@ -16,11 +17,11 @@ const DownloadAppCard: React.FC = () => {
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2">
-            <img
+            <Image
               alt="Apple Logo"
               loading="lazy"
-              width="32"
-              height="32"
+              width={32}
+              height={32}
               decoding="async"
               src="https://indcdn.indmoney.com/cdn-cgi/image/quality=auto,format=auto,width=48/https://indcdn.indmoney.com/cdn/images/seo/website/apple_round_logo.png"
               style={{ color: "transparent" }}
@@ -59,11 +60,11 @@ const DownloadAppCard: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <img
+            <Image
               alt="Play Store Logo"
               loading="lazy"
-              width="32"
-              height="32"
+              width={32}
+              height={32}
               decoding="async"
               src="https://indcdn.indmoney.com/cdn-cgi/image/quality=auto,format=auto,width=48/https://indcdn.indmoney.com/cdn/images/seo/website/playstore_round_logo.png"
               style={{ color: "transparent" }}

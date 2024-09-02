@@ -31,6 +31,7 @@ const Navbar = ({
 
             <div className="relative hidden md:block">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                
                 <svg
                   className="w-4 h-4 text-gray-500 "
                   aria-hidden="true"
@@ -62,7 +63,7 @@ const Navbar = ({
               data-collapse-toggle="navbar-sticky"
               className="inline-flex items-center p-2 gap-4 justify-center text-sm text-gray-500 rounded-lg  focus:outline-none focus:ring-2 focus:ring-gray-200 "
             >
-              <button className="px-2.5 py-1 my-2 text-green-600 bg-brand-white border border-green-600 rounded-full  transition-all duration-100 shadow-one">
+                 <button className="px-2.5 py-1 my-2 text-green-600 bg-brand-white border border-green-600 rounded-full  transition-all duration-100 shadow-one">
                 Log In
               </button>
               <svg
@@ -89,7 +90,7 @@ const Navbar = ({
                   strokeWidth="1.5"
                 />
               </svg>
-
+             
               <IoIosSearch className="size-7" />
             </div>
             <button

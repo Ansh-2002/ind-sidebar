@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import DownloadAppCard from "@/components/DownloadAppCard";
+import Link from "next/link";
 
 interface SidebarProps {
   menuItems: {
     title: string;
+    url: string; // Add the 'url' property
     subItems: Record<string, string | Record<string, string>>;
   }[];
 }
@@ -129,22 +131,33 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
                   className="flex items-center w-full py-4 text-gray-600 group text-left border-b"
                   onClick={() => handleSubItemsToggle(index)}
                 >
-                  <span className="flex-1 px-4">{item.title}</span>
-                  <svg
-                    className={`w-5 h-5 transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    aria-hidden="true"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M6.293 7.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L10 11.414 6.293 8.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  {item.title === "Pricing" ? ( // temp fix change later 
+                    <Link href={item.url}>
+                      <div className="w-[1000px]">
+                        <span className="flex-1 px-4"> Pricing</span>
+                      </div>
+                    </Link>
+                  ) : (
+                    <>
+                      <span className="flex-1 px-4">{item.title}</span>
+
+                      <svg
+                        className={`w-5 h-5 transition-transform ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.293 7.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L10 11.414 6.293 8.707a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </>
+                  )}
                 </button>
                 <div
                   className={`overflow-hidden transition-max-height duration-300 ease-in-out ${
