@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { CgMenuRight } from "react-icons/cg";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { IoIosSearch } from "react-icons/io";
 
 const Navbar = ({
   toggleSidebar,
@@ -55,7 +56,42 @@ const Navbar = ({
               />
             </div>
           </div>
+
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <div
+              data-collapse-toggle="navbar-sticky"
+              className="inline-flex items-center p-2 gap-4 justify-center text-sm text-gray-500 rounded-lg  focus:outline-none focus:ring-2 focus:ring-gray-200 "
+            >
+              <button className="px-2.5 py-1 my-2 text-green-600 bg-brand-white border border-green-600 rounded-full  transition-all duration-100 shadow-one">
+                Log In
+              </button>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="aspect-square w-6"
+              >
+                <path
+                  d="M20 11a8 8 0 00-16 0"
+                  stroke="#757779"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M20 18v.5a2 2 0 01-2 2h-3.5M2 15.438v-1.876a2 2 0 011.515-1.94l1.74-.436a.601.601 0 01.745.582v5.463a.6.6 0 01-.746.583l-1.74-.435A2 2 0 012 15.439v-.001zm20 0v-1.876a2 2 0 00-1.515-1.94l-1.74-.436a.601.601 0 00-.745.582v5.463a.601.601 0 00.745.583l1.74-.435A2 2 0 0022 15.439v-.001z"
+                  stroke="#757779"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M13.5 22h-3a1.5 1.5 0 110-3h3a1.5 1.5 0 110 3z"
+                  stroke="#757779"
+                  strokeWidth="1.5"
+                />
+              </svg>
+
+              <IoIosSearch className="size-7" />
+            </div>
             <button
               type="button"
               className="px-4 py-2 text-center  "
@@ -82,34 +118,9 @@ const Navbar = ({
                   </svg>
                 </div>
               )}
-              {/* <HiMenuAlt3  className="size-7"/> */}
-            </button>
-            <button
-              data-collapse-toggle="navbar-sticky"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
-              aria-controls="navbar-sticky"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
             </button>
           </div>
-          <div
+          {/* <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky"
           >
@@ -148,7 +159,7 @@ const Navbar = ({
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </nav>
     </>
