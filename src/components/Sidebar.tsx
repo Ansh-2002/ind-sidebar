@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import DownloadAppCard from "@/components/DownloadAppCard";
-import Link from "next/link";
+// import a from "next/a";
 
 interface SidebarProps {
   menuItems: {
@@ -131,12 +131,12 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
                   className="flex items-center w-full py-4 text-gray-600 group text-left border-b"
                   onClick={() => handleSubItemsToggle(index)}
                 >
-                  {item.title === "Pricing" ? ( // temp fix change later 
-                    <Link href={item.url}>
+                  {item.title === "Pricing" ? ( // temp fix change later
+                    <a href={item.url}>
                       <div className="w-[1000px]">
                         <span className="flex-1 px-4"> Pricing</span>
                       </div>
-                    </Link>
+                    </a>
                   ) : (
                     <>
                       <span className="flex-1 px-4">{item.title}</span>
